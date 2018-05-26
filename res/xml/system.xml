@@ -30,7 +30,7 @@
         android:key="suspend_actions"
         android:title="@string/screen_state_toggles_title"
         android:summary="@string/screen_state_toggles_summary_opt"
-        android:fragment="com.xtended.xtensions.fragments.SuspendActions" />
+        android:fragment="com.gzr.wolvesden.fragments.SuspendActions" />
 
     <Preference
         android:title="@string/app_ops_settings"
