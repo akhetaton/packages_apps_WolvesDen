@@ -148,7 +148,7 @@ public class SuspendActions extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.Validus;
+        return MetricsProto.MetricsEvent.WOLVESDEN;
     }
 
     @Override
