@@ -43,6 +43,9 @@ public class VariousLockscreen extends SettingsPreferenceFragment implements
     private ListPreference mLockscreenClockSelection;
     private ListPreference mLockscreenDateSelection;
 
+    private FingerprintManager mFingerprintManager;
+    private SwitchPreference mFingerprintVib;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,13 @@ public class VariousLockscreen extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.VALIDUS;
+    }
+
+    // Fingerprint vibration
+    mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+    mFingerprintVib = (SwitchPreference) prefSet.findPreference("fingerprint_success_vib");
+    if (!mFingerprintManager.isHardwareDetected()){
+        prefSet.removePreference(mFingerprintVib);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
